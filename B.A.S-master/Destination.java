@@ -35,9 +35,9 @@ public class Destination
 	public String getDays()
 	{
 		String d = "";
-		for (int i = 0; j <= days.length; i++)
+		for (int i = 0; i <= days.length; i++)
 		{
-			d = d.concat(day[i]);
+			d = d.concat(days[i]);
 		}
 		return "Οι μέρες για τον προορισμό" + name + "είναι: " + d;
 	}
@@ -56,8 +56,11 @@ public class Destination
 	
 	public void goToMeteo()
 	{
-		String url_open ="https://www.meteo.gr/";
-		java.awt.Desktop.getDesktop().browse(java.net.URI.create(url_open));
+		String urlToOpen ="https://www.meteo.gr/";
+		try{
+		   Desktop.getDesktop().browse(URI.create(urlToOpen));}
+		catch (Exception e){
+		   e.printStackTrace();}
 	}
 	
 	public double getCoordinates()
@@ -72,8 +75,11 @@ public class Destination
 	
 	public void goToTrivago()
 	{
-		String url_open ="https://www.trivago.gr/";
-		java.awt.Desktop.getDesktop().browse(java.net.URI.create(url_open));
+		String urlToOpen ="https://www.trivago.gr/";
+		try{
+		   Desktop.getDesktop().browse(URI.create(urlToOpen));}
+		catch (Exception e){
+		   e.printStackTrace();}
 	}
 	
 	public void display()
