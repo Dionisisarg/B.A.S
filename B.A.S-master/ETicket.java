@@ -1,42 +1,41 @@
 public class ETicket
 {
     private int code;
-    private enum type { olokliro, foititiko, politekno};
-    private type typeTicket;
+    private Type typeTicket;
     // η τιμή του εισητηρίου για το συγκεκριμένο προορισμό (χωρίς την έκπτωση που πιθανόν να έχει)
     private int destinationPrice;
     private int seat; 
     private int discount;
-    private boolean withreturn;
+    private boolean withReturn;
     private int busID;
     private String owner;
     
 
-   public ETicket(int code, type typeTicket, int seat,boolean withreturn,int busID,String owner,int price )
+   public ETicket(int code, Type typeTicket, int seat, boolean withReturn,int busID,String owner,int destinationPrice )
     {          
-	        this.destinationPrice = price;
+	        this.destinationPrice = destinationPrice;
                 this.code = code;
 		this.typeTicket = typeTicket;
 	        this.seat = seat;
-		this.withreturn = withreturn;
+		this.withreturn = withReturn;
 		this.busID = busID;
 	        this.owner = owner;
     }
    public int getDiscount(){
    
         switch (typeTicket) {
-            case "olokliro":
+            case OLOKLIRO:
                 discount = 0;
                 System.out.println("Your discount is" + discount + "$");
                 break;
                     
-            case "foititiko":
-                discount = price * 50/100;
+            case FOITITIKO:
+                discount = destinationPrice * 50/100;
                 System.out.println("Your discount is" + discount + "$");
                 break;
                          
-            case "politekno":
-                discount = price * 20/100;
+            case POLITEKNO:
+                discount = destinationPrice * 20/100;
                 System.out.println("Your discount is" + discount + "$");
                 break;
                   }
@@ -45,12 +44,18 @@ public class ETicket
     public void calculatePrice() {
 	
 	int price = destinationPrice - discount;
-	if (withreturn == true )
-	{ price = 2 * price;}
+	if (withReturn)
+	{ 
+		price = 2 * price;}
         System.out.println("The price of your ticket is:" + price);
    }
    public void display(){
       /*ΕΜΦΑΝΊΖΕΙ ΚΑΤΑΛΗΛΕΣ ΟΘΟΝΕΣ GUI*/
    }
    
+}
+enum Type {
+	OLOKLIRO,
+	FOITITIKO,
+	POLITEKNO
 }
