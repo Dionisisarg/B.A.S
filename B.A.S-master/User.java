@@ -10,7 +10,7 @@ public class User
    private int phoneNumber;
    private Seat userSeat;
    private type typeTicket;
-   public enum type{ 50%ticket, 25%ticket, fullticket}
+   public enum TicketType{ FIFTY_PERCENT_TICKET, TWENTY_FIVE_PERCENT_TICKET, FULL_TICKET}
    private String password;
    private String username;
    private double[] userLocation= new double[2];
@@ -19,7 +19,7 @@ public class User
    ArrayList <String> passwords= new ArrayList<String>();
    
   //constructor
-  public User(String name, String email,int phoneNumber, Seat seat,type ticket,String password, String username)
+  public User(String name, String email,int phoneNumber, Seat seat,TicketType ticket,String password, String username)
    {
       this.name = name;
       this.typeTicket = ticket;
@@ -76,10 +76,10 @@ public class User
     }
   /*οι παράμετροι της μεθόδου παρακάτω αντιστοιχούν στα πεδία κατά τη συμπλήρωση 
   των στοιχείων του χρήστη για τον υπολογισμο της τιμής εισητηρίου*/
-  public boolean checkName_Type(String name,type typeTicket)
+  public boolean checkName_Type(String name,TicketType typeTicket)
    {
 
-     if(name.isEmpty() || typeTicket.isEmpty())
+     if(name.isEmpty() || typeTicket==null)
        { System.out.println("You must enter your name and type of your ticket to continue!");
          return false;}
      else {return true; }
