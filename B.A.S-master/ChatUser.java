@@ -6,8 +6,8 @@ import java.util.Random;
 public class ChatUser extends User {
     private int id;
   
-   public ChatUser(int id){
-   this.id = id;
+   public ChatUser(String name, String email,int phoneNumber, Seat seat,TicketType ticket,String password, String username){
+     super(name, email, phoneNumber, seat, ticket, username, password); 
   }
   public int generateID(){
     int rant_int;
