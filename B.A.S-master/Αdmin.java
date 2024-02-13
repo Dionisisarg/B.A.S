@@ -15,7 +15,8 @@ public class Admin extends User{
         // ask the user for the search string
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Please enter your username and your password");
-        String searchString = keyboard.next().equalsIgnoreCase();
+        String searchString=keyboard.next();
+        boolean isEqualIgnoreCase = searchString.equalsIgnoreCase(searchString);
         // open the data file
         File file = new File("Admin.csv");
         // create a scanner from the file
