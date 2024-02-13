@@ -1,6 +1,6 @@
-import Java.io.*;
-import Java.util.Scanner;
-import Java.util.*;
+import java.io.*;
+import java.util.Scanner;
+import java.util.*;
 
 public class Package
 {
@@ -22,7 +22,7 @@ public class Package
 	public void dataEntry(){
 		Scanner myObj=new Scanner(System.in);
 		System.out.println("Enter the id");
-		Int id=myObj.nextInt();
+		int id=myObj.nextInt();
 		
 		Scanner myObj1= new Scanner(System.in);
 		System.out.println("Enter the weight");
