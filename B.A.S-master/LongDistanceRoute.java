@@ -23,7 +23,7 @@ public class LongDistanceRoute
     public boolean checkDestinationData ()
     { 
 	//Έλεγχος αν τα στοιχεία του προορισμού έχουν συμπληρωθεί
-        if (this.date.isEmpty() || this.destination.isEmpty() ||  this.direction.isEmpty() )
+        if (this.date.isEmpty() || this.destination == null ||  this.direction == null )
          { System.out.println(" You must insert all data of your longDistance route to continue!");
                  return false;}
         else {
